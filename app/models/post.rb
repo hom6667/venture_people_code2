@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  resourcify
   belongs_to :user
   # for comments and reply
   acts_as_commentable

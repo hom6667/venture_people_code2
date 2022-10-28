@@ -39,6 +39,11 @@ gem 'acts_as_commentable_with_threading'
 # for admin page
 gem 'rails_admin'
 
+# for admin and student roles
+gem 'cancancan'
+gem 'rolify'
+
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
