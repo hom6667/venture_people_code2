@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%# for comments %>
+    <script type="text/javascript">
+      function showHide(id) {
+         var obj = document.getElementById(id);
+         if (obj.style.display == 'none')
+             obj.style.display = 'block';
+         else
+             obj.style.display = 'none';
+      }
+    </script>
+    <%# end of comments func %>
   </head>
-
   <body>
     <%= yield %>
   </body>
