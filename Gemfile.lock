@@ -74,6 +74,7 @@ GEM
       activerecord (>= 4.0)
       activesupport (>= 4.0)
       awesome_nested_set (>= 3.0)
+    acts_as_votable (0.14.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     awesome_nested_set (3.5.0)
@@ -279,6 +280,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable_with_threading
+  acts_as_votable
   bootsnap
   cancancan
   capybara

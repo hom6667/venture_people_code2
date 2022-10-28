@@ -3,6 +3,34 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   before_action :set_post, only: %i[ show edit update destroy ]
+# 투표 관련 Controller 내용 : 찬성
+def upvote
+  @post = Post.find(params[:id])
+
+  #만약 '찬성' 투표를 이미 한 경우 : '찬성' 투표 취소
+  if ((current_user.voted_up_on? @post) == true)
+      @post.unliked_by current_user
+      redirect_to(request.referrer, :notice => '해당 글의 추천을 취소하셨습니다.')
+  else
+      @post.upvote_by current_user
+      redirect_to(request.referrer, :notice => '해당 글을 추천하셨습니다.')
+  end
+end
+
+# 투표 관련 Controller 내용 : 반대
+def downvote
+  @post = Post.find(params[:id])
+    
+  #만약 '반대' 투표를 이미 한 경우 : '반대' 투표 취소
+  if ((current_user.voted_down_on? @post) == true)
+      @post.unliked_by current_user    
+      redirect_to(request.referrer, :notice => '해당 글의 반대를 취소하셨습니다.')
+  else
+      @post.downvote_from current_user
+      redirect_to(request.referrer, :notice => '해당 글을 반대하셨습니다.')
+  end
+end
+
 
   # GET /posts or /posts.json
   def index
