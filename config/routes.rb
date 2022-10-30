@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'posts/haha'
+
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :posts
   devise_for :users
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
 
   authenticate :user, lambda { |u| u.admin? } do
     begin
