@@ -1,6 +1,6 @@
 <!-- 
 <div class="comments-header">  
-    <h4>댓글 (<%= commentable.comment_threads.count %>)</h4>
+    <h4>commnets (<%= commentable.comment_threads.count %>)</h4>
 </div>
 
  <label> <%= render partial: "comments/form", locals: {new_comment: new_comment} %></label>
@@ -19,6 +19,6 @@
   </legend>
   <label> <%= render partial: "comments/form", locals: {new_comment: new_comment} %></label>
 
-    <h4>댓글 (<%= commentable.comment_threads.count %>)</h4>
+    <h4>comments (<%= commentable.comment_threads.count %>)</h4>
     <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
 </fieldset>

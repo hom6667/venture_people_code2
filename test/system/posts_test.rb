@@ -19,6 +19,7 @@ class PostsTest < ApplicationSystemTestCase
     fill_in "User", with: @post.user_id
     click_on "Create Post"
 
+    # why 
     assert_text "Post was successfully created"
     click_on "Back"
   end

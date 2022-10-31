@@ -10,9 +10,9 @@ class CommentsController < ApplicationController
       respond_to do |format|
         if @comment.save
           make_child_comment
-          format.html  { redirect_to(request.referrer, :notice => '댓글이 작성되었습니다.') }
+          format.html  { redirect_to(request.referrer, :notice => 'Comments have been created.') }
         else
-          format.html  { redirect_to(request.referrer, :alert => '댓글 내용을 작성해주세요.') }
+          format.html  { redirect_to(request.referrer, :alert => 'Please write the contents of the comment.') }
         end
       end
     end
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
         @comment = Comment.find_by(id: params[:id])
         @comment.delete
         respond_to do |format|
-          format.html { redirect_to(request.referrer, :notice => '댓글이 삭제되었습니다.')}
+          format.html { redirect_to(request.referrer, :notice => 'Comments have been deleted.')}
           format.js
         end
     end

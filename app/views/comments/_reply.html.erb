@@ -1,12 +1,12 @@
 <% comments.each do |comment| %>  
     <div class="comments-show" id="comment<%= comment.id %>">
         <div class="comment">
-            <%= comment.user != nil ? comment.user.email : comment.email %> / <%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.strftime('%Y-%m-%d %H:%M') %> ] /
+            <%= comment.user != nil ? comment.user.email : comment.email %> / <%= time_ago_in_words(comment.created_at) %> Ago [ <%= comment.created_at.strftime('%Y-%m-%d %H:%M') %> ] /
             <%= button_to "Destroy this comment", comment_path(comment), method: :delete %>
             <%= content_tag(:div, comment.body, style: "white-space: pre-wrap;") %>
             
             <div class="comment-nav" align="right">
-                <a onclick="showHide('comment_reply_<%= comment.id %>')" onfocus="this.blur()">답댓글</a>
+                <a onclick="showHide('comment_reply_<%= comment.id %>')" onfocus="this.blur()">Reply</a>
             </div>
             
             <div id="comment_reply_<%= comment.id %>" style="display:none;">
@@ -20,7 +20,7 @@
                         </div>
                         <div class="field form-group" style="margin-bottom: 60px">
                               
-                            <%= submit_tag "답댓글 작성", style: "float: right;" %>
+                            <%= submit_tag "Write reply", style: "float: right;" %>
                         </div>
                     <% end %>
                 </div>
