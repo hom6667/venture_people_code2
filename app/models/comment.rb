@@ -12,6 +12,9 @@ class Comment < ActiveRecord::Base
 
   # NOTE: Comments belong to a user
   belongs_to :user
+  # for comments
+  acts_as_votable
+
 
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a user_id, and comment text

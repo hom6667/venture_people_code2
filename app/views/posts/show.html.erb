@@ -5,8 +5,4 @@
   <%= link_to "Back to posts", posts_path %>
   <%= button_to "Destroy this post", @post, method: :delete %>
   <%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
-  <div>
-    <%= button_to "👍 #{@post.get_upvotes.size}", like_post_path(@post), method: :put %>
-    <%= button_to "😞 #{@post.get_downvotes.size}", dislike_post_path(@post), method: :put %>
-  </div>
 </div>

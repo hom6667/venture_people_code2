@@ -1,9 +1,10 @@
-<% comments.each do |comment| %>  
-    <div class="comments-show">
-        <div class="comment">
-            <%= comment.user != nil ? comment.user.email : comment.email %> / <%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.strftime('%Y-%m-%d %H:%M') %> ] /
-            <%= button_to "Destroy this comment", comment_path(comment), method: :delete %>
-            <%= content_tag(:div, comment.body, style: "white-space: pre-wrap;") %>
-        </div>
+<% comments.each do |comment| %>
+  <div class="comments-show">
+    <div class="comment">
+      <%= comment.user != nil ? comment.user.email : comment.email %> / <%= time_ago_in_words(comment.created_at) %>전 [ <%= comment.created_at.strftime('%Y-%m-%d %H:%M') %> ] /
+      <%= button_to "Destroy this comment", comment_path(comment), method: :delete %>
+      <%= content_tag(:div, comment.body, style: "white-space: pre-wrap;") %>
+
     </div>
+  </div>
 <% end %>
