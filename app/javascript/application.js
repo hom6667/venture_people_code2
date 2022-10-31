@@ -7,6 +7,6 @@ const toggleButton = document.getElementById("toggle-button");
 
 toggleButton.addEventListener("click", (event) => {
   fieldset.disabled = !fieldset.disabled;
-  toggleButton.textContent = fieldset.disabled ? "Enable" : "Disable";
+  toggleButton.textContent = fieldset.disabled ? "Open" : "Close";
   toggleButton.setAttribute("aria-pressed", `${!fieldset.disabled}`);
 });
