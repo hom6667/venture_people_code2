@@ -9,6 +9,13 @@
 user = User.create( email: 'admin@qut.edu.au', password: 'Qweasd12' )
 user = User.find(1)
 user.add_role :admin
+user.update_attribute :admin, true
 
-t = User.find(1)
-t.update_attribute :admin, true
+
+# t = User.find(1)
+# t.update_attribute :admin, true
+
+
+# admin account
+# admin@qut.edu.au
+# Qweasd12

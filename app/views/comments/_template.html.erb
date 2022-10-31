@@ -1,8 +1,24 @@
+<!-- 
 <div class="comments-header">  
     <h4>댓글 (<%= commentable.comment_threads.count %>)</h4>
 </div>
- <%= render partial: "comments/form", locals: {new_comment: new_comment} %>
+
+ <label> <%= render partial: "comments/form", locals: {new_comment: new_comment} %></label>
 
 <div class="comments-container">  
     <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
 </div>
+-->
+
+<fieldset disabled>
+  <legend>
+    Open or Close:
+    <button id="toggle-button" aria-pressed="true">
+      Enable
+    </button>
+  </legend>
+  <label> <%= render partial: "comments/form", locals: {new_comment: new_comment} %></label>
+
+    <h4>댓글 (<%= commentable.comment_threads.count %>)</h4>
+    <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
+</fieldset>
