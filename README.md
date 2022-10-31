@@ -16,8 +16,8 @@ Development of the application has been performed utilising the following minimu
 *	Ubuntu Linux 10.04
 *	128MB RAM
 *	Storage: 124MB
-* ruby 3.1.4
-* Rails 7.0.4
+*   Ruby 3.1.4
+*   Rails 7.0.4
 *	GitBash v2.35.1
 *	GitHub v3.4.2
 *	GitHub Actions

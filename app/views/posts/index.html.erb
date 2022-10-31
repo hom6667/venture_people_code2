@@ -10,33 +10,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-
     <div class="container">
+      <p style="color: green"><%= notice %></p>
+      <h1>Announcements</h1>
+      <div id="posts">
+        <%= link_to "New Announcement", new_post_path %>  <br>
+        <% @posts.each do |post| %>
+          <%# <%= render post %>
 
-    
-    <p style="color: green"><%= notice %></p>
-    <h1>Posts</h1>
-    <div id="posts">
-      <% @posts.each do |post| %>
-        <%# <%= render post %>
-        <tr>
-          <td><%= post.title %></td>
-          <td><%= post.content %></td>
-          <td><%= post.user.email %></td>
-          <td><%= link_to 'Show', post %></td>
-          <% if can? :update, post %>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <% end %>
-          <% if can? :destroy, post %>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
-        <p>
-          <%= link_to "Show this post", post %>
-        </p>
-      <% end %>
-    </div>
-    <%= link_to "New post", new_post_path %>
+          <div class="jumbotron">
+  <h1 class="display-4"><%= post.title %></h1>
+  <p class="lead"><%= post.content %></p>
+  <p><%= post.user.email %></p>
+   <%= time_ago_in_words(post.created_at) %> Ago [ <%= post.created_at.strftime('%Y-%m-%d %H:%M') %> ]
+<%= link_to "Show this post", post, class: "btn btn-large btn-primary" %>
+
+</div>
+
+
+          <tr>
+            <td><%= post.title %></td>
+            <td><%= post.content %></td>
+            <td><%= post.user.email %></td>
+            <td><%= link_to 'Show', post %></td>
+            <% if can? :update, post %>
+              <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <% end %>
+            <% if can? :destroy, post %>
+              <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+          <p>
+            <%= link_to "Show this post", post %>
+          </p>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>
