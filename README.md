@@ -21,3 +21,9 @@ Development of the application has been performed utilising the following minimu
 *	GitBash v2.35.1
 *	GitHub v3.4.2
 *	GitHub Actions
+
+# Documents : ##
+
+You can check our documents from Github and One drive 
+* Github /documents 
+* Onedrive https://connectqutedu-my.sharepoint.com/:f:/r/personal/n9541501_qut_edu_au1/Documents/IFB399/Documents/handover%20documents?csf=1&web=1&e=OW9QRc
