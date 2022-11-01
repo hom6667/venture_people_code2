@@ -13,6 +13,5 @@
      <%= button_to "😞 #{@post.get_downvotes.size}", dislike_post_path(@post), method: :put %>
    </div>
   -->
-  <%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
+<%= render partial: "comments/template", locals: {commentable: @post, new_comment: @comment} %>
 </div>
-

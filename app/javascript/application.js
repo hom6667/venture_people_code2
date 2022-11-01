@@ -7,10 +7,8 @@ const toggleButton = document.getElementById("toggle-button");
 
 toggleButton.addEventListener("click", (event) => {
   fieldset.disabled = !fieldset.disabled;
-  toggleButton.textContent = fieldset.disabled ? "Open" : "Close";
+  toggleButton.textContent = fieldset.disabled ? "Enable" : "Disable";
   toggleButton.setAttribute("aria-pressed", `${!fieldset.disabled}`);
 });
 
 
-//= require tinymce
-//= require tinymce-jquery

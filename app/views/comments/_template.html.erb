@@ -9,16 +9,14 @@
     <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
 </div>
 -->
-
 <fieldset disabled>
   <legend>
-    Open or Close:
+    Enable or disable:
     <button id="toggle-button" aria-pressed="true">
       Enable
     </button>
   </legend>
   <label> <%= render partial: "comments/form", locals: {new_comment: new_comment} %></label>
-
-    <h4>comments (<%= commentable.comment_threads.count %>)</h4>
-    <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
+  <h4>comments (<%= commentable.comment_threads.count %>)</h4>
+  <%= render partial: "comments/reply", locals: {comments: commentable.root_comments} %>
 </fieldset>
